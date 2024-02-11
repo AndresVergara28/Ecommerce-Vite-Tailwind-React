@@ -1,10 +1,7 @@
+import { Layout } from "../../components/Layout";
 
 const MyAccount = () => {
-  return (
-    <div>
-      My account
-    </div>
-  )
-}
+  return <Layout>My account</Layout>;
+};
 
-export default MyAccount
+export default MyAccount;

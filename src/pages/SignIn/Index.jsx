@@ -1,11 +1,8 @@
-import React from 'react'
+import React from "react";
+import { Layout } from "../../components/Layout";
 
 const SignIn = () => {
-  return (
-    <div>
-      Sign in
-    </div>
-  )
-}
+  return <Layout>Sign in</Layout>;
+};
 
-export default SignIn
+export default SignIn;
