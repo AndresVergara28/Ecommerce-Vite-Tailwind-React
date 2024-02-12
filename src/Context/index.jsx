@@ -3,11 +3,14 @@ import { createContext, useState } from "react";
 export const CartContext = createContext();
 
 import React from "react";
+import { useGetAllProducts } from "../hooks/useGetProducts";
 
 export const CartProvider = ({ children }) => {
-  const [count, setCount] = useState(0);
   const [productChosen, setProductChosen] = useState({});
   const [cart, setCart] = useState([]);
+
+  // GetProducts
+  const { products } = useGetAllProducts();
 
   // ProductDetail | Show Product
   const [isProductDetailOpen, setIsProductDetailOpen] = useState(false);
@@ -23,18 +26,18 @@ export const CartProvider = ({ children }) => {
 
   //Order / setTheOrder
   const [order, setOrder] = useState([]);
+
   return (
     <CartContext.Provider
       value={{
-        count,
         isProductDetailOpen,
         isCheckoutDetail,
         productChosen,
         cart,
         order,
+        products,
         setOrder,
         setCart,
-        setCount,
         setProductChosen,
         openProductDetail,
         closeProductDetail,

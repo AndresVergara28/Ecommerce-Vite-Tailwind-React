@@ -4,9 +4,23 @@ import { useGetAllProducts } from "../../hooks/useGetProducts";
 import { ProductDetail } from "../../components/ProductDetail";
 import { useContext, useState } from "react";
 import { CartContext } from "../../context";
+import { useParams } from "react-router-dom";
 
-const Home = () => {
+const Category = () => {
   const { products } = useContext(CartContext);
+  const { category } = useParams();
+
+  console.log(category);
+
+  const filterProductsByCategory = (category) => {
+    console.log(category);
+    products.map((el) => {
+      console.log(el.category);
+    });
+  };
+
+  console.log(filterProductsByCategory(category));
+
   const [filtrado, setFiltrado] = useState(products);
 
   const getProducts = (e) => {
@@ -22,7 +36,7 @@ const Home = () => {
   return (
     <Layout>
       <div className=" flex items-center justify-center relative 2-80 mb-4">
-        <h1 className="font-medium text-xl">Exclusive Products</h1>
+        <h1 className="font-medium text-xl">Exclusive {category}</h1>
       </div>
 
       <input
@@ -42,4 +56,4 @@ const Home = () => {
   );
 };
 
-export { Home };
+export { Category };
