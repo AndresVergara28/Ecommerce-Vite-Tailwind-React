@@ -1,9 +1,9 @@
 import { useRoutes, BrowserRouter } from "react-router-dom";
 import { Home } from "../Home";
 import { Category } from "../Category";
-import MyAccount from "../MyAccount";
-import NotFound from "../NotFound";
-import SignIn from "../SignIn";
+import { MyAccount } from "../MyAccount";
+import { NotFound } from "../NotFound";
+import { SignIn } from "../SignIn";
 import { MyOrders } from "../MyOrders";
 import { MyOrder } from "../MyOrder";
 import { MyOrderByID } from "../MyOrderByID";

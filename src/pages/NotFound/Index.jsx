@@ -4,4 +4,4 @@ const NotFound = () => {
   return <Layout>Not Found</Layout>;
 };
 
-export default NotFound;
+export { NotFound };

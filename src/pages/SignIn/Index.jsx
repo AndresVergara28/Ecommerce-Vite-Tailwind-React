@@ -5,4 +5,4 @@ const SignIn = () => {
   return <Layout>Sign in</Layout>;
 };
 
-export default SignIn;
+export { SignIn };

@@ -4,4 +4,4 @@ const MyAccount = () => {
   return <Layout>My account</Layout>;
 };
 
-export default MyAccount;
+export { MyAccount };
