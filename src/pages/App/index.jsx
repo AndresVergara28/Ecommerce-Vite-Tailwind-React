@@ -10,8 +10,8 @@ import { MyOrderByID } from "../MyOrderByID";
 
 import "./App.css";
 import { NavBar } from "../../components/NavBar";
-import { CartProvider } from "../../context";
 import { CheckoutSideMenu } from "../../components/CheckoutDetail";
+import { CartProvider } from "../../Context";
 
 const AppRoutes = () => {
   let routes = useRoutes([
