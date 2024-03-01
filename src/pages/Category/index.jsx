@@ -3,25 +3,13 @@ import { Layout } from "../../components/Layout";
 import { useGetAllProducts } from "../../hooks/useGetProducts";
 import { ProductDetail } from "../../components/ProductDetail";
 import { useContext, useState } from "react";
-import { CartContext } from "../../context";
 import { useParams } from "react-router-dom";
+import { CartContext } from "../../Context";
 
 const Category = () => {
-  const { products } = useContext(CartContext);
   const { category } = useParams();
-
-  console.log(category);
-
-  const filterProductsByCategory = (category) => {
-    console.log(category);
-    products.map((el) => {
-      console.log(el.category);
-    });
-  };
-
-  console.log(filterProductsByCategory(category));
-
-  const [filtrado, setFiltrado] = useState(products);
+  const { products, filteredProducts, setFilteredProducts } =
+    useContext(CartContext);
 
   const getProducts = (e) => {
     const filteredProducts = products.filter((product) => {
@@ -30,9 +18,8 @@ const Category = () => {
       return productTitle.includes(productSearched);
     });
 
-    setFiltrado(filteredProducts);
+    setFilteredProducts(filteredProducts);
   };
-
   return (
     <Layout>
       <div className=" flex items-center justify-center relative 2-80 mb-4">
@@ -47,7 +34,7 @@ const Category = () => {
       />
 
       <div className="grid gap-4 grid-cols-4 max-w-scree-lg">
-        {filtrado?.map((el) => {
+        {filteredProducts?.map((el) => {
           return <Card product={el} key={el.id} />;
         })}
       </div>

@@ -1,13 +1,13 @@
+import axios from "axios";
+import { CartContext } from "../../Context";
 import { Card } from "../../components/ItemCard";
 import { Layout } from "../../components/Layout";
-import { useGetAllProducts } from "../../hooks/useGetProducts";
 import { ProductDetail } from "../../components/ProductDetail";
-import { useContext, useState } from "react";
-import { CartContext } from "../../context";
+import { useContext, useEffect, useState } from "react";
 
 const Home = () => {
-  const { products } = useContext(CartContext);
-  const [filtrado, setFiltrado] = useState(products);
+  const { products, filteredProducts, setFilteredProducts } =
+    useContext(CartContext);
 
   const getProducts = (e) => {
     const filteredProducts = products.filter((product) => {
@@ -16,7 +16,7 @@ const Home = () => {
       return productTitle.includes(productSearched);
     });
 
-    setFiltrado(filteredProducts);
+    setFilteredProducts(filteredProducts);
   };
 
   return (
@@ -33,7 +33,7 @@ const Home = () => {
       />
 
       <div className="grid gap-4 grid-cols-4 max-w-scree-lg">
-        {filtrado?.map((el) => {
+        {filteredProducts?.map((el) => {
           return <Card product={el} key={el.id} />;
         })}
       </div>

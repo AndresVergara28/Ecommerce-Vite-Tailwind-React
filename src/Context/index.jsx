@@ -1,16 +1,30 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
+import { useGetAllProducts } from "../hooks/useGetProducts";
+import axios from "axios";
 
 export const CartContext = createContext();
-
-import React from "react";
-import { useGetAllProducts } from "../hooks/useGetProducts";
 
 export const CartProvider = ({ children }) => {
   const [productChosen, setProductChosen] = useState({});
   const [cart, setCart] = useState([]);
 
   // GetProducts
-  const { products } = useGetAllProducts();
+  const [products, setProducts] = useState(null);
+  const [filteredProducts, setFilteredProducts] = useState(null);
+
+  useEffect(() => {
+    const fethcData = async () => {
+      try {
+        const response = await axios.get(`https://dummyjson.com/products`);
+        setProducts(response.data.products);
+        setFilteredProducts(response.data.products);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    fethcData();
+  }, []);
 
   // ProductDetail | Show Product
   const [isProductDetailOpen, setIsProductDetailOpen] = useState(false);
@@ -36,6 +50,9 @@ export const CartProvider = ({ children }) => {
         cart,
         order,
         products,
+        filteredProducts,
+        setFilteredProducts,
+        setProducts,
         setOrder,
         setCart,
         setProductChosen,

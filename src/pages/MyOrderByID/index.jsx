@@ -8,8 +8,6 @@ import { OrderCard } from "../../components/OrderCard";
 const MyOrderByID = () => {
   const { index } = useParams();
   const { order } = useContext(CartContext);
-  console.log(order[index]);
-  console.log(index);
   return (
     <Layout>
       <div className=" flex flex-col">
