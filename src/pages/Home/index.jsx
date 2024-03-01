@@ -3,7 +3,7 @@ import { Card } from "../../components/ItemCard";
 import { Layout } from "../../components/Layout";
 import { ProductDetail } from "../../components/ProductDetail";
 import { useContext, useEffect, useState } from "react";
-import { CartContext } from "../../context";
+import { CartContext } from "../../Context";
 
 const Home = () => {
   const { products, filteredProducts, setFilteredProducts } =

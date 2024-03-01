@@ -3,7 +3,7 @@ import { Layout } from "../../components/Layout";
 import { OrderCard } from "../../components/OrderCard";
 import { ChevronLeftIcon } from "@heroicons/react/24/outline";
 import { Link } from "react-router-dom";
-import { CartContext } from "../../context";
+import { CartContext } from "../../Context";
 
 const MyOrder = () => {
   const { order } = useContext(CartContext);

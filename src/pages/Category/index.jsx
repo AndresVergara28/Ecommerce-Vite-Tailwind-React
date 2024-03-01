@@ -4,7 +4,7 @@ import { useGetAllProducts } from "../../hooks/useGetProducts";
 import { ProductDetail } from "../../components/ProductDetail";
 import { useContext, useState } from "react";
 import { useParams } from "react-router-dom";
-import { CartContext } from "../../context";
+import { CartContext } from "../../Context";
 
 const Category = () => {
   const { category } = useParams();

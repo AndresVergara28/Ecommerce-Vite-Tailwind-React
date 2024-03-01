@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { CartContext } from "../../context";
+import { CartContext } from "../../Context";
 import { CheckIcon, PlusIcon } from "@heroicons/react/24/outline";
 
 const Card = ({ product }) => {

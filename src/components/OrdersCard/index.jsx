@@ -1,7 +1,5 @@
 import { ChevronRightIcon } from "@heroicons/react/24/outline";
 
-ChevronRightIcon;
-
 const OrdersCard = ({ order }) => {
   return (
     <div className="flex p-4 w-80 mt-3 items-center mb-2 border border-black rounded-lg">

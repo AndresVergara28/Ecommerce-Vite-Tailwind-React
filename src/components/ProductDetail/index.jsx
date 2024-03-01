@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { XCircleIcon } from "@heroicons/react/24/outline";
 import "./styles.css";
-import { CartContext } from "../../context";
+import { CartContext } from "../../Context";
 
 const ProductDetail = () => {
   const { isProductDetailOpen, closeProductDetail, productChosen } =

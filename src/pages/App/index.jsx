@@ -11,7 +11,7 @@ import { MyOrderByID } from "../MyOrderByID";
 import "./App.css";
 import { NavBar } from "../../components/NavBar";
 import { CheckoutSideMenu } from "../../components/CheckoutDetail";
-import { CartProvider } from "../../context";
+import { CartProvider } from "../../Context";
 
 const AppRoutes = () => {
   let routes = useRoutes([
