@@ -1,9 +1,9 @@
 import axios from "axios";
-import { CartContext } from "../../Context";
 import { Card } from "../../components/ItemCard";
 import { Layout } from "../../components/Layout";
 import { ProductDetail } from "../../components/ProductDetail";
 import { useContext, useEffect, useState } from "react";
+import { CartContext } from "../../context";
 
 const Home = () => {
   const { products, filteredProducts, setFilteredProducts } =
