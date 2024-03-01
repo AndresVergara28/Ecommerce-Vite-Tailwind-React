@@ -1,10 +1,9 @@
 import { createContext, useEffect, useState } from "react";
-import { useGetAllProducts } from "../hooks/useGetProducts";
 import axios from "axios";
 
-export const CartContext = createContext();
+const CartContext = createContext();
 
-export const CartProvider = ({ children }) => {
+const CartProvider = ({ children }) => {
   const [productChosen, setProductChosen] = useState({});
   const [cart, setCart] = useState([]);
 
@@ -68,3 +67,5 @@ export const CartProvider = ({ children }) => {
     </CartContext.Provider>
   );
 };
+
+export { CartProvider, CartContext };
