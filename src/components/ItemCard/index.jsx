@@ -21,10 +21,8 @@ const Card = ({ product }) => {
   const addProductToCart = (e) => {
     e.stopPropagation();
     e.preventDefault();
-    setCount(count + 1);
     setCart([...cart, product]);
     openCheckoutDetail();
-
   };
 
   const renderItem = (identificacion) => {
